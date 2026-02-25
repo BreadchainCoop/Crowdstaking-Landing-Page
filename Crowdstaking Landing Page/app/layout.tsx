@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#DC7C40",
+  themeColor: "#E8713A",
   width: "device-width",
   initialScale: 1,
 }
@@ -34,8 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${kufam.variable} antialiased`}
-        style={{ fontFamily: "'Satoshi', sans-serif" }}
+        className={`${kufam.variable} font-sans antialiased`}
       >
         {children}
       </body>

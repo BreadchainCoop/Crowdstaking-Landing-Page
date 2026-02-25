@@ -47,13 +47,13 @@ export function InterestCalculator() {
   }
 
   return (
-    <Card className="p-6 bg-gradient-to-br from-card via-card to-muted/30 shadow-2xl border-2 border-secondary">
+    <Card className="p-6 bg-card shadow-2xl border border-border/50">
       <CardHeader className="text-center pb-6">
         <CardTitle className="flex items-center justify-center gap-2 text-4xl font-[var(--font-kufam)]">
           <TrendingUp className="h-6 w-6 text-primary" />
           Community Funding Calculator
         </CardTitle>
-        <p className="text-base text-foreground">
+        <p className="text-base text-muted-foreground">
           Set your target and see the minimum requirements
         </p>
       </CardHeader>
@@ -66,7 +66,7 @@ export function InterestCalculator() {
             Monthly Target Interest
           </Label>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-foreground w-12">$50</span>
+            <span className="text-sm text-muted-foreground w-12">$50</span>
             <Slider
               value={[targetAmount]}
               onValueChange={handleTargetChange}
@@ -75,7 +75,7 @@ export function InterestCalculator() {
               step={50}
               className="flex-1"
             />
-            <span className="text-sm text-foreground w-12">$5K</span>
+            <span className="text-sm text-muted-foreground w-12">$5K</span>
           </div>
           <div className="text-center">
             <span className="text-3xl text-primary">
@@ -87,15 +87,15 @@ export function InterestCalculator() {
 
         {/* Required Parameters - Read Only */}
         <div className="pt-4 border-t border-border space-y-4">
-          <h4 className="text-center text-sm text-foreground mb-4">
+          <h4 className="text-center text-sm text-muted-foreground mb-4">
             Minimum Requirements
           </h4>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-muted/50 rounded-lg p-4">
+            <div className="bg-muted rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="h-4 w-4 text-secondary" />
-                <span className="text-base text-foreground">
+                <span className="text-base text-muted-foreground">
                   Community Members
                 </span>
               </div>
@@ -103,16 +103,16 @@ export function InterestCalculator() {
                 <span className="text-2xl text-secondary">
                   {optimal.members}
                 </span>
-                <span className="text-sm text-foreground ml-1">
+                <span className="text-sm text-muted-foreground ml-1">
                   members minimum
                 </span>
               </div>
             </div>
 
-            <div className="bg-muted/50 rounded-lg p-4">
+            <div className="bg-muted rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
                 <DollarSign className="h-4 w-4 text-secondary" />
-                <span className="text-base text-foreground">
+                <span className="text-base text-muted-foreground">
                   Average Stake per Member
                 </span>
               </div>
@@ -120,7 +120,7 @@ export function InterestCalculator() {
                 <span className="text-2xl text-secondary">
                   ${optimal.stake}
                 </span>
-                <span className="text-sm text-foreground ml-1">per member</span>
+                <span className="text-sm text-muted-foreground ml-1">per member</span>
               </div>
             </div>
           </div>
@@ -130,20 +130,20 @@ export function InterestCalculator() {
         <div className="pt-4 border-t border-border">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div className="text-center">
-              <p className="text-base text-foreground">Total Staked</p>
+              <p className="text-base text-muted-foreground">Total Staked</p>
               <p className="text-lg text-foreground">
                 ${actualTotalStaked.toLocaleString()}
               </p>
             </div>
             <div className="text-center">
-              <p className="text-base text-foreground">APY</p>
+              <p className="text-base text-muted-foreground">APY</p>
               <p className="text-lg text-foreground">{assumedAPY}%</p>
             </div>
           </div>
 
           <div className="text-center space-y-2">
             <div>
-              <p className="text-base text-foreground">
+              <p className="text-base text-muted-foreground">
                 Actual Monthly Interest
               </p>
               <p className="text-2xl text-primary">
@@ -176,7 +176,7 @@ export function InterestCalculator() {
         </div>
 
         <div className="text-center pt-2">
-          <p className="text-xs text-foreground">
+          <p className="text-xs text-muted-foreground">
             * This calculation provides an approximate configuration based on
             your monthly target interest. Calculations based on {assumedAPY}%
             APY. Ranges: 50-500 members, $100-1K stakes.
