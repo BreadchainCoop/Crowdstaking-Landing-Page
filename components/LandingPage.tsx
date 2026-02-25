@@ -18,8 +18,8 @@ export function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-14 items-center px-4">
+      <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto flex h-16 items-center px-4">
           <div className="mr-4 flex">
             <a className="mr-6 flex items-center gap-2" href="/">
               <Image
@@ -29,34 +29,42 @@ export function LandingPage() {
                 height={24}
                 className="rounded"
               />
-              <span className="font-[var(--font-kufam)]">Crowdstaking</span>
+              <span className="font-[var(--font-kufam)] text-foreground">Crowdstaking</span>
             </a>
           </div>
           <div className="flex flex-1 items-center justify-between md:justify-end">
             <div className="w-full flex-1 md:w-auto md:flex-none">
-              <nav className="hidden md:flex items-center gap-6">
+              <nav className="hidden md:flex items-center gap-6 text-sm">
                 <a
                   href="#features"
-                  className="transition-colors hover:text-foreground/80"
+                  className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Features
                 </a>
                 <a
                   href="#how-it-works"
-                  className="transition-colors hover:text-foreground/80"
+                  className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   How it Works
                 </a>
                 <a
                   href="#get-started"
-                  className="transition-colors hover:text-foreground/80"
+                  className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Get Started
+                </a>
+                <a
+                  href="https://bread.coop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary transition-colors hover:text-primary/80"
+                >
+                  Bread Cooperative
                 </a>
               </nav>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
                 Documentation
               </Button>
               <Button size="sm">Deploy Your Instance</Button>
@@ -66,44 +74,45 @@ export function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--primary)_0%,_transparent_50%)] opacity-[0.07]" />
+        <div className="container mx-auto px-4 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10">
+              <div className="space-y-6">
                 <h1
-                  className="text-5xl md:text-8xl tracking-tight"
+                  className="text-5xl md:text-7xl tracking-tight text-balance"
                   style={{ fontFamily: "var(--font-kufam)" }}
                 >
                   <span className="text-primary">Crowdstaking</span>
                   <br />
-                  <span className="text-secondary italic text-2xl md:text-4xl">
+                  <span className="text-secondary italic text-2xl md:text-3xl leading-relaxed">
                     Turning shared funds into shared futures.
                   </span>
                 </h1>
-                <p className="text-xl text-foreground max-w-[600px]">
+                <p className="text-lg text-muted-foreground max-w-[560px] leading-relaxed">
                   Crowdstaking transforms any pool of money into an
-                  interest-generating engine to funds your group{"'"}s shared
+                  interest-generating engine to fund your group{"'"}s shared
                   goals. Your deposited funds remain safely staked and fully
-                  withdrawable--only the interest gets allocated.
+                  withdrawable -- only the interest gets allocated.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6">
+                <Button size="lg" className="text-lg px-8 py-6 rounded-xl">
                   Deploy Your Instance
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 py-6 border-primary hover:bg-primary/5"
+                  className="text-lg px-8 py-6 rounded-xl border-primary/30 text-foreground hover:bg-primary/10"
                 >
                   View Demo
                 </Button>
               </div>
 
-              <div className="flex items-center gap-6 text-sm text-foreground">
+              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-secondary" />
                   <span>Open source protocol</span>
@@ -127,11 +136,11 @@ export function LandingPage() {
       </section>
 
       {/* Key Concepts and Design Principles Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2
-              className="text-3xl md:text-4xl"
+              className="text-3xl md:text-4xl text-foreground"
               style={{ fontFamily: "var(--font-kufam)" }}
             >
               Fund what{"'"}s meaningful to you
@@ -150,16 +159,16 @@ export function LandingPage() {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-lg mb-2">Interest Distribution</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-lg mb-2 text-foreground">Interest Distribution</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       The protocol accumulates interest and distributes it to
                       each user.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-lg mb-2">Cycle-Based Operations</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-lg mb-2 text-foreground">Cycle-Based Operations</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       The system operates in fixed-length cycles (measured in
                       blocks), providing predictable distribution schedules
                       while allowing for regular reallocation of resources.
@@ -180,22 +189,22 @@ export function LandingPage() {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-lg mb-2">Accessibility</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-lg mb-2 text-foreground">Accessibility</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Any community can deploy and customize their own instance
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-lg mb-2">Decentralization</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-lg mb-2 text-foreground">Decentralization</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       No single entity controls interest distribution
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-lg mb-2">Flexibility</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-lg mb-2 text-foreground">Flexibility</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Support for adding/removing interest recipients and
                       adjusting parameters
                     </p>
@@ -208,11 +217,11 @@ export function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20">
+      <section id="features" className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2
-              className="text-3xl md:text-4xl"
+              className="text-3xl md:text-4xl text-foreground"
               style={{ fontFamily: "var(--font-kufam)" }}
             >
               Features
@@ -220,14 +229,14 @@ export function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-border/50 hover:border-primary/30 transition-all">
               <CardContent className="p-0">
                 <div className="space-y-4">
-                  <div className="h-12 w-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                  <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Coins className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl">Automated Yield Generation</h3>
-                  <p className="text-foreground">
+                  <h3 className="text-xl text-foreground">Automated Yield Generation</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     Community members deposit funds to generate interest on the
                     principal.
                   </p>
@@ -235,14 +244,14 @@ export function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-border/50 hover:border-primary/30 transition-all">
               <CardContent className="p-0">
                 <div className="space-y-4">
-                  <div className="h-12 w-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+                    <Shield className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl">White-Label Ready</h3>
-                  <p className="text-foreground">
+                  <h3 className="text-xl text-foreground">White-Label Ready</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     Deploy with your organization{"'"}s branding and customize
                     the interface to match your community{"'"}s needs.
                   </p>
@@ -250,14 +259,14 @@ export function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-border/50 hover:border-primary/30 transition-all">
               <CardContent className="p-0">
                 <div className="space-y-4">
-                  <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <TrendingUp className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl">Interest Optimization</h3>
-                  <p className="text-foreground">
+                  <h3 className="text-xl text-foreground">Interest Optimization</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     Advanced strategies automatically rebalance funds across
                     DeFi protocols to maximize community returns.
                   </p>
@@ -265,14 +274,14 @@ export function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-border/50 hover:border-primary/30 transition-all">
               <CardContent className="p-0">
                 <div className="space-y-4">
-                  <div className="h-12 w-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                    <Target className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+                    <Target className="h-6 w-6 text-secondary" />
                   </div>
-                  <h3 className="text-xl">Project Tracking</h3>
-                  <p className="text-foreground">
+                  <h3 className="text-xl text-foreground">Project Tracking</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     Monitor funded projects with milestone-based payments and
                     transparent progress reporting.
                   </p>
@@ -284,18 +293,18 @@ export function LandingPage() {
       </section>
 
       {/* Under the Hood Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2
-              className="text-3xl md:text-4xl"
+              className="text-3xl md:text-4xl text-foreground"
               style={{ fontFamily: "var(--font-kufam)" }}
             >
               Under the Hood
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-foreground leading-relaxed">
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
               The Crowdstaking application is a smart contract system on Gnosis
               Chain that accepts users{"'"} xDAI and converts it into sDAI
@@ -309,65 +318,65 @@ export function LandingPage() {
       </section>
 
       {/* How it Works Section */}
-      <section id="how-it-works" className="py-20">
+      <section id="how-it-works" className="py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div className="text-center space-y-4">
                 <h2
-                  className="text-3xl md:text-4xl"
+                  className="text-3xl md:text-4xl text-foreground text-balance"
                   style={{ fontFamily: "var(--font-kufam)" }}
                 >
                   Fundraising for free: from shared funds to shared futures
                 </h2>
               </div>
 
-              <div className="space-y-6 max-w-2xl mx-auto">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 h-8 w-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center">
+              <div className="space-y-8 max-w-2xl mx-auto">
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-medium">
                     1
                   </div>
                   <div>
-                    <h4>Community pools assets</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-foreground mb-1">Community pools assets</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Members deposit funds to the shared community pool in your
                       own branded interface.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 h-8 w-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center">
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-medium">
                     2
                   </div>
                   <div>
-                    <h4>Automated interest generation</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-foreground mb-1">Automated interest generation</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Funds are automatically generating yield through
                       overcollateralized loans.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 h-8 w-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center">
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-medium">
                     3
                   </div>
                   <div>
-                    <h4>Community decides on funding</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-foreground mb-1">Community decides on funding</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Interest is allocated to your community{"'"}s shared goal.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 h-8 w-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center">
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 h-10 w-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-medium">
                     4
                   </div>
                   <div>
-                    <h4>Projects get funded</h4>
-                    <p className="text-foreground">
+                    <h4 className="text-foreground mb-1">Projects get funded</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Projects receive funding while members retain their
                       original principal amount.
                     </p>
@@ -380,50 +389,50 @@ export function LandingPage() {
       </section>
 
       {/* Get Started Section */}
-      <section id="get-started" className="py-20">
+      <section id="get-started" className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2
-              className="text-3xl md:text-4xl"
+              className="text-3xl md:text-4xl text-foreground"
               style={{ fontFamily: "var(--font-kufam)" }}
             >
               Start funding your community goal today
             </h2>
-            <p className="text-xl text-foreground max-w-[600px] mx-auto">
+            <p className="text-lg text-muted-foreground max-w-[600px] mx-auto">
               Crowdstaking is completely free and open source.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Quick Deploy Option */}
-            <Card className="p-6 hover:shadow-xl transition-shadow border-2 border-primary/20">
+            <Card className="p-6 border-primary/20 hover:border-primary/40 transition-all">
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
                   <Badge variant="secondary" className="w-fit">
                     Recommended
                   </Badge>
-                  <h3 className="text-xl">Quick Deploy</h3>
-                  <p className="text-foreground text-sm">
+                  <h3 className="text-xl text-foreground">Quick Deploy</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Get your community protocol running in minutes with our
                     hosted solution. Perfect for communities who want to focus on
                     their mission, not technical setup.
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-3 border-t border-border">
+                <div className="flex items-center justify-between pt-3 border-t border-border/50">
                   <div>
-                    <p className="text-sm text-foreground">Timeline</p>
-                    <p className="text-base">24-48 hours</p>
+                    <p className="text-sm text-muted-foreground">Timeline</p>
+                    <p className="text-base text-foreground">24-48 hours</p>
                   </div>
                   <div>
-                    <p className="text-sm text-foreground">
+                    <p className="text-sm text-muted-foreground">
                       Technical knowledge
                     </p>
-                    <p className="text-base">None required</p>
+                    <p className="text-base text-foreground">None required</p>
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full">
+                <Button size="lg" className="w-full rounded-xl">
                   Start Quick Deploy
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -431,7 +440,7 @@ export function LandingPage() {
             </Card>
 
             {/* Self-Deploy Option */}
-            <Card className="p-6 hover:shadow-xl transition-shadow border-2 border-secondary/20">
+            <Card className="p-6 border-secondary/20 hover:border-secondary/40 transition-all">
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
                   <Badge
@@ -440,23 +449,23 @@ export function LandingPage() {
                   >
                     Advanced
                   </Badge>
-                  <h3 className="text-xl">Self-Deploy</h3>
-                  <p className="text-foreground text-sm">
+                  <h3 className="text-xl text-foreground">Self-Deploy</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Deploy and customize your own instance with full control over
                     smart contracts, infrastructure, and governance parameters.
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-3 border-t border-border">
+                <div className="flex items-center justify-between pt-3 border-t border-border/50">
                   <div>
-                    <p className="text-sm text-foreground">Timeline</p>
-                    <p className="text-base">1-2 weeks</p>
+                    <p className="text-sm text-muted-foreground">Timeline</p>
+                    <p className="text-base text-foreground">1-2 weeks</p>
                   </div>
                   <div>
-                    <p className="text-sm text-foreground">
+                    <p className="text-sm text-muted-foreground">
                       Technical knowledge
                     </p>
-                    <p className="text-base">{"Solidity & Web3"}</p>
+                    <p className="text-base text-foreground">{"Solidity & Web3"}</p>
                   </div>
                 </div>
 
@@ -464,14 +473,14 @@ export function LandingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-secondary hover:bg-secondary/5"
+                    className="w-full rounded-xl border-secondary/30 hover:bg-secondary/10"
                   >
                     View Documentation
                   </Button>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-secondary hover:bg-secondary/5"
+                    className="w-full rounded-xl border-secondary/30 hover:bg-secondary/10"
                   >
                     Clone Repository
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -482,10 +491,10 @@ export function LandingPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-lg text-foreground mb-4">
+            <p className="text-lg text-muted-foreground mb-4">
               Need help deciding? Our team is here to guide you.
             </p>
-            <Button variant="ghost" size="lg" className="text-lg">
+            <Button variant="ghost" size="lg" className="text-lg text-foreground">
               Schedule a Consultation
             </Button>
           </div>
@@ -493,16 +502,16 @@ export function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="space-y-8 max-w-3xl mx-auto">
             <h2
-              className="text-3xl md:text-4xl"
+              className="text-3xl md:text-4xl text-primary-foreground"
               style={{ fontFamily: "var(--font-kufam)" }}
             >
               Ready to empower your community?
             </h2>
-            <p className="text-xl opacity-90">
+            <p className="text-xl text-primary-foreground/80">
               Join the movement of communities using Crowdstaking to fund
               real-world impact. Deploy your economic toolkit today.
             </p>
@@ -510,7 +519,7 @@ export function LandingPage() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="text-lg px-8 py-6"
+                className="text-lg px-8 py-6 rounded-xl"
               >
                 Deploy Your Instance
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -518,7 +527,7 @@ export function LandingPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                className="text-lg px-8 py-6 rounded-xl border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
               >
                 View Documentation
               </Button>
@@ -528,7 +537,7 @@ export function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 border-t">
+      <footer className="py-16 border-t border-border/50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
@@ -540,34 +549,43 @@ export function LandingPage() {
                   height={24}
                   className="rounded"
                 />
-                <span className="font-[var(--font-kufam)]">Crowdstaking</span>
+                <span className="font-[var(--font-kufam)] text-foreground">Crowdstaking</span>
               </div>
-              <p className="text-foreground">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 An open-source economic primitive for participatory community
-                funding.
+                funding. A project by{" "}
+                <a
+                  href="https://bread.coop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors"
+                >
+                  Bread Cooperative
+                </a>
+                .
               </p>
             </div>
 
             <div className="space-y-4">
-              <h4>Protocol</h4>
-              <div className="space-y-2 text-foreground">
+              <h4 className="text-foreground text-sm font-medium">Protocol</h4>
+              <div className="space-y-2 text-sm">
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Documentation
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     GitHub
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Audits
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Governance
                   </a>
                 </div>
@@ -575,51 +593,56 @@ export function LandingPage() {
             </div>
 
             <div className="space-y-4">
-              <h4>Community</h4>
-              <div className="space-y-2 text-foreground">
+              <h4 className="text-foreground text-sm font-medium">Community</h4>
+              <div className="space-y-2 text-sm">
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Discord
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Twitter
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Blog
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
-                    Case Studies
+                  <a
+                    href="https://bread.coop"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Bread Cooperative
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h4>Support</h4>
-              <div className="space-y-2 text-foreground">
+              <h4 className="text-foreground text-sm font-medium">Support</h4>
+              <div className="space-y-2 text-sm">
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Help Center
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Contact
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Developer Portal
                   </a>
                 </div>
                 <div>
-                  <a href="#" className="hover:text-foreground">
+                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                     Status
                   </a>
                 </div>
@@ -627,9 +650,18 @@ export function LandingPage() {
             </div>
           </div>
 
-          <div className="mt-16 pt-8 border-t text-center text-foreground">
+          <div className="mt-16 pt-8 border-t border-border/50 text-center text-muted-foreground text-sm">
             <p>
-              {"© "}2024 Crowdstaking. All rights reserved.
+              {"© "}2024 Crowdstaking by{" "}
+              <a
+                href="https://bread.coop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors"
+              >
+                Bread Cooperative
+              </a>
+              . All rights reserved.
             </p>
           </div>
         </div>
