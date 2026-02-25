@@ -1,7 +1,7 @@
 import { readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
-const uiDir = join(process.cwd(), 'Crowdstaking Landing Page', 'components', 'ui');
+const uiDir = '/vercel/share/v0-project/Crowdstaking Landing Page/components/ui';
 
 const files = await readdir(uiDir);
 let totalFixed = 0;
